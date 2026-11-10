@@ -1,0 +1,355 @@
+{
+  "trained_at": "2026-11-10T10:09:47+00:00",
+  "selected_model": "logistic_regression",
+  "selection_criterion": "validation F1",
+  "risk_thresholds": {
+    "low": 0.4292,
+    "high": 0.4933,
+    "target_band_purity": 0.95
+  },
+  "data": {
+    "train_source": {
+      "id": "ealvaradob/phishing-dataset",
+      "file": "urls.json",
+      "labels": "1 = phishing, 0 = benign (documented in dataset card)"
+    },
+    "external_test_source": {
+      "id": "pirocheto/phishing-url",
+      "files": [
+        "data/train.parquet",
+        "data/test.parquet"
+      ],
+      "labels": "status column: 'phishing' / 'legitimate'"
+    },
+    "main_raw_rows": 835697,
+    "main_conflicting_label_urls_dropped": 42,
+    "main_clean_rows": 796133,
+    "external_raw_rows": 11430,
+    "external_conflicting_label_urls_dropped": 0,
+    "external_clean_rows": 11070,
+    "main_rows_removed_overlap_with_external": 11068,
+    "train_rows": 635666,
+    "train_phishing_ratio": 0.4544,
+    "validation_rows": 72394,
+    "validation_phishing_ratio": 0.4789,
+    "test_rows": 77005,
+    "test_phishing_ratio": 0.4381,
+    "external_rows": 11070,
+    "external_phishing_ratio": 0.4838,
+    "split": "domain-grouped hash split 80/10/10 (no registrable domain shared across splits)"
+  },
+  "models": {
+    "logistic_regression": {
+      "train_seconds": 3934.0,
+      "decision_threshold": 0.5103,
+      "validation": {
+        "threshold": 0.5103,
+        "accuracy": 0.9461,
+        "precision": 0.9534,
+        "recall": 0.933,
+        "f1": 0.9431,
+        "roc_auc": 0.9859,
+        "brier_score": 0.0433,
+        "false_positive_rate": 0.0419,
+        "false_negative_rate": 0.067,
+        "confusion_matrix": {
+          "tn": 36145,
+          "fp": 1580,
+          "fn": 2323,
+          "tp": 32346
+        },
+        "n": 72394
+      },
+      "validation_at_0.5": {
+        "threshold": 0.5,
+        "accuracy": 0.9457,
+        "precision": 0.9515,
+        "recall": 0.9342,
+        "f1": 0.9428,
+        "roc_auc": 0.9859,
+        "brier_score": 0.0433,
+        "false_positive_rate": 0.0438,
+        "false_negative_rate": 0.0658,
+        "confusion_matrix": {
+          "tn": 36074,
+          "fp": 1651,
+          "fn": 2280,
+          "tp": 32389
+        },
+        "n": 72394
+      },
+      "test": {
+        "threshold": 0.5103,
+        "accuracy": 0.9232,
+        "precision": 0.8929,
+        "recall": 0.9371,
+        "f1": 0.9145,
+        "roc_auc": 0.9805,
+        "brier_score": 0.0564,
+        "false_positive_rate": 0.0876,
+        "false_negative_rate": 0.0629,
+        "confusion_matrix": {
+          "tn": 39481,
+          "fp": 3790,
+          "fn": 2121,
+          "tp": 31613
+        },
+        "n": 77005
+      },
+      "test_risk_bands": {
+        "LOW RISK": {
+          "n": 39911,
+          "share_of_inputs": 0.5183,
+          "actual_phishing_rate": 0.0415
+        },
+        "MEDIUM RISK": {
+          "n": 1340,
+          "share_of_inputs": 0.0174,
+          "actual_phishing_rate": 0.2664
+        },
+        "HIGH RISK": {
+          "n": 35754,
+          "share_of_inputs": 0.4643,
+          "actual_phishing_rate": 0.8872
+        }
+      },
+      "test_error_examples": {
+        "false_positives": [
+          {
+            "url": "facebook.com/pages/Fumito-Ueda/105517452816116",
+            "p": 0.662
+          },
+          {
+            "url": "facebook.com/Illumiti",
+            "p": 0.638
+          },
+          {
+            "url": "facebook.com/glenn.sugita",
+            "p": 0.776
+          },
+          {
+            "url": "facebook.com/pages/Simply-Seb/117897168267974",
+            "p": 0.677
+          },
+          {
+            "url": "jimmy-rollins-family-foundation-havana-nights.ticketleap.com/",
+            "p": 0.614
+          },
+          {
+            "url": "secure.colgateprofessional.com/app/cop/repository/article-202/frameset.jsp",
+            "p": 0.633
+          },
+          {
+            "url": "facebook.com/avishai.us",
+            "p": 0.74
+          },
+          {
+            "url": "www.ruhr-uni-bochum.de/lmi/simon/index.html",
+            "p": 0.623
+          },
+          {
+            "url": "facebook.com/suzanne.cloutier2",
+            "p": 0.788
+          },
+          {
+            "url": "facebook.com/cowboysandaliens?sk=app_252738558073411",
+            "p": 0.613
+          },
+          {
+            "url": "en-gb.facebook.com/arash.arashi",
+            "p": 0.768
+          },
+          {
+            "url": "facebook.com/connor.oconnor",
+            "p": 0.766
+          },
+          {
+            "url": "bkent.net./Doc/simple5.htm",
+            "p": 0.709
+          },
+          {
+            "url": "facebook.com/pages/Soji-Kashiwagi/109641865722274",
+            "p": 0.657
+          },
+          {
+            "url": "https://uelpotw-prod.uefa.com:443/",
+            "p": 0.942
+          }
+        ],
+        "false_negatives": [
+          {
+            "url": "intercitycarhire.co.za/administrator/sbsa/standard/continue.html",
+            "p": 0.487
+          },
+          {
+            "url": "http://jakkylinks.com/joe/",
+            "p": 0.171
+          },
+          {
+            "url": "https://homewo.org/",
+            "p": 0.064
+          },
+          {
+            "url": "http://geraldbernier.com/me/mail.html",
+            "p": 0.342
+          },
+          {
+            "url": "aquatixbottle.com/nhftgrg45/",
+            "p": 0.342
+          },
+          {
+            "url": "https://hasticart.com/?walach",
+            "p": 0.478
+          },
+          {
+            "url": "ndye.org/kio/",
+            "p": 0.018
+          },
+          {
+            "url": "https://amaurla.com/",
+            "p": 0.367
+          },
+          {
+            "url": "painterspaintings.com/P_mindelse-koordinaterne-dk/732577c8f043bfbc714aa208ad269a49/",
+            "p": 0.148
+          },
+          {
+            "url": "https://jobpark21.com/es/ds/dxl/dive/",
+            "p": 0.469
+          },
+          {
+            "url": "victoria.nswebhost.com/~faridkh/webalbum/thumbs/cgi/",
+            "p": 0.199
+          },
+          {
+            "url": "v0v3gd51.com/ads.php?sid=1923",
+            "p": 0.481
+          },
+          {
+            "url": "https://bvcbdzvxz.mrbasic.com/",
+            "p": 0.504
+          },
+          {
+            "url": "nuggets4msproject.com/depot/mx/bookmark/",
+            "p": 0.429
+          },
+          {
+            "url": "www.atpropertymanagementservices.co.uk/house.htm",
+            "p": 0.437
+          }
+        ]
+      },
+      "external_test": {
+        "threshold": 0.5103,
+        "accuracy": 0.8389,
+        "precision": 0.8138,
+        "recall": 0.865,
+        "f1": 0.8386,
+        "roc_auc": 0.9213,
+        "brier_score": 0.118,
+        "false_positive_rate": 0.1855,
+        "false_negative_rate": 0.135,
+        "confusion_matrix": {
+          "tn": 4654,
+          "fp": 1060,
+          "fn": 723,
+          "tp": 4633
+        },
+        "n": 11070
+      },
+      "external_risk_bands": {
+        "LOW RISK": {
+          "n": 5081,
+          "share_of_inputs": 0.459,
+          "actual_phishing_rate": 0.1169
+        },
+        "MEDIUM RISK": {
+          "n": 245,
+          "share_of_inputs": 0.0221,
+          "actual_phishing_rate": 0.4571
+        },
+        "HIGH RISK": {
+          "n": 5744,
+          "share_of_inputs": 0.5189,
+          "actual_phishing_rate": 0.8095
+        }
+      }
+    },
+    "random_forest": {
+      "train_seconds": 25.8,
+      "decision_threshold": 0.4662,
+      "validation": {
+        "threshold": 0.4662,
+        "accuracy": 0.8907,
+        "precision": 0.8941,
+        "recall": 0.8754,
+        "f1": 0.8847,
+        "roc_auc": 0.9569,
+        "brier_score": 0.0809,
+        "false_positive_rate": 0.0952,
+        "false_negative_rate": 0.1246,
+        "confusion_matrix": {
+          "tn": 34132,
+          "fp": 3593,
+          "fn": 4319,
+          "tp": 30350
+        },
+        "n": 72394
+      },
+      "validation_at_0.5": {
+        "threshold": 0.5,
+        "accuracy": 0.89,
+        "precision": 0.9036,
+        "recall": 0.8623,
+        "f1": 0.8824,
+        "roc_auc": 0.9569,
+        "brier_score": 0.0809,
+        "false_positive_rate": 0.0846,
+        "false_negative_rate": 0.1377,
+        "confusion_matrix": {
+          "tn": 34535,
+          "fp": 3190,
+          "fn": 4775,
+          "tp": 29894
+        },
+        "n": 72394
+      },
+      "test": {
+        "threshold": 0.4662,
+        "accuracy": 0.9137,
+        "precision": 0.9044,
+        "recall": 0.8979,
+        "f1": 0.9011,
+        "roc_auc": 0.9716,
+        "brier_score": 0.0665,
+        "false_positive_rate": 0.074,
+        "false_negative_rate": 0.1021,
+        "confusion_matrix": {
+          "tn": 40071,
+          "fp": 3200,
+          "fn": 3445,
+          "tp": 30289
+        },
+        "n": 77005
+      },
+      "external_test": {
+        "threshold": 0.4662,
+        "accuracy": 0.7086,
+        "precision": 0.6738,
+        "recall": 0.7709,
+        "f1": 0.7191,
+        "roc_auc": 0.7977,
+        "brier_score": 0.1929,
+        "false_positive_rate": 0.3498,
+        "false_negative_rate": 0.2291,
+        "confusion_matrix": {
+          "tn": 3715,
+          "fp": 1999,
+          "fn": 1227,
+          "tp": 4129
+        },
+        "n": 11070
+      }
+    }
+  }
+}

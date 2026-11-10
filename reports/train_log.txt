@@ -1,0 +1,29 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/chaitanyasiddharth/Library/Application Support/Claude/scratch-workspaces/a38f87de-b1e1-414c-8850-d5810f2cb0e4/116be3b6-2194-4bcc-935a-10dc33687804/scratch-2026-11-10-674ba9/.venv/lib/python3.13/site-packages/sklearn/svm/_base.py:1295: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+{
+  "main_raw_rows": 835697,
+  "main_conflicting_label_urls_dropped": 42,
+  "main_clean_rows": 796133,
+  "external_raw_rows": 11430,
+  "external_conflicting_label_urls_dropped": 0,
+  "external_clean_rows": 11070,
+  "main_rows_removed_overlap_with_external": 11068,
+  "train_rows": 635666,
+  "train_phishing_ratio": 0.4544,
+  "validation_rows": 72394,
+  "validation_phishing_ratio": 0.4789,
+  "test_rows": 77005,
+  "test_phishing_ratio": 0.4381,
+  "external_rows": 11070,
+  "external_phishing_ratio": 0.4838,
+  "split": "domain-grouped hash split 80/10/10 (no registrable domain shared across splits)"
+}
+logistic_regression {"threshold": 0.5103, "accuracy": 0.9461, "precision": 0.9534, "recall": 0.933, "f1": 0.9431, "roc_auc": 0.9859, "brier_score": 0.0433, "false_positive_rate": 0.0419, "false_negative_rate": 0.067, "confusion_matrix": {"tn": 36145, "fp": 1580, "fn": 2323, "tp": 32346}, "n": 72394}
+random_forest {"threshold": 0.4662, "accuracy": 0.8907, "precision": 0.8941, "recall": 0.8754, "f1": 0.8847, "roc_auc": 0.9569, "brier_score": 0.0809, "false_positive_rate": 0.0952, "false_negative_rate": 0.1246, "confusion_matrix": {"tn": 34132, "fp": 3593, "fn": 4319, "tp": 30350}, "n": 72394}
+logistic_regression TEST {"threshold": 0.5103, "accuracy": 0.9232, "precision": 0.8929, "recall": 0.9371, "f1": 0.9145, "roc_auc": 0.9805, "brier_score": 0.0564, "false_positive_rate": 0.0876, "false_negative_rate": 0.0629, "confusion_matrix": {"tn": 39481, "fp": 3790, "fn": 2121, "tp": 31613}, "n": 77005}
+logistic_regression EXTERNAL {"threshold": 0.5103, "accuracy": 0.8389, "precision": 0.8138, "recall": 0.865, "f1": 0.8386, "roc_auc": 0.9213, "brier_score": 0.118, "false_positive_rate": 0.1855, "false_negative_rate": 0.135, "confusion_matrix": {"tn": 4654, "fp": 1060, "fn": 723, "tp": 4633}, "n": 11070}
+random_forest TEST {"threshold": 0.4662, "accuracy": 0.9137, "precision": 0.9044, "recall": 0.8979, "f1": 0.9011, "roc_auc": 0.9716, "brier_score": 0.0665, "false_positive_rate": 0.074, "false_negative_rate": 0.1021, "confusion_matrix": {"tn": 40071, "fp": 3200, "fn": 3445, "tp": 30289}, "n": 77005}
+random_forest EXTERNAL {"threshold": 0.4662, "accuracy": 0.7086, "precision": 0.6738, "recall": 0.7709, "f1": 0.7191, "roc_auc": 0.7977, "brier_score": 0.1929, "false_positive_rate": 0.3498, "false_negative_rate": 0.2291, "confusion_matrix": {"tn": 3715, "fp": 1999, "fn": 1227, "tp": 4129}, "n": 11070}
+
+Selected logistic_regression. Saved models/url_model.joblib and reports/url_model_metrics.json
